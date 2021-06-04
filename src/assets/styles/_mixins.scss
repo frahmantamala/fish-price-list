@@ -1,0 +1,39 @@
+// table
+@mixin break {
+  thead {
+    display: none;
+  }
+
+  tr {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  td {
+    display: block;
+    position: relative;
+    padding-left: 130px;
+    text-align: left;
+    border-bottom: 0;
+
+    &:last-child {
+      border-bottom: 1px solid $border-color;
+    }
+
+    &::before {
+      content: attr(data-heading);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 120px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      background-color: $primary-color;
+      color: $light-color;
+      font-size: 0.75rem;
+      padding: 0 5px;
+      justify-content: center;
+    }
+  }
+}
