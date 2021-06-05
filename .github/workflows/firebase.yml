@@ -28,7 +28,7 @@ jobs:
     - name: npm install, build and test
       run: 
         npm install
-        npm run build:prod
+        npm run build-prod
     - name: Archive Build
       uses: actions/upload-artifact@v2
       with: 
