@@ -1,6 +1,5 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Getting Started with Fish Price List
+This app can display list data as a card and filtering data then add data to server
 
 ## Available Scripts
 
