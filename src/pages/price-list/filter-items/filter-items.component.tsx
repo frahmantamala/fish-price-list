@@ -69,7 +69,7 @@ class FilterItemsComponent extends React.Component<FilterData, FilterState> {
           <Row gutter={[16, 16]}>
             <Col lg={12} xs={24} >
               <FilterRadio
-                list={this.props.dataArea.map((items: any, idx: number) => { return { area_kota: [...items.city], id: items.idx } })}
+                list={this.props.dataArea.map((items: any, idx: number) => { return { area_kota: items.city, id: items.idx } })}
                 handleFilters={(filters: any) => this.handleFilters(filters, "continents")}
               />
             </Col>
