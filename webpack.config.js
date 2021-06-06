@@ -19,7 +19,7 @@ module.exports = (env) => {
 
   // set parameter in dotenv config
   const fileEnv = dotenv.config({ path: finalPath }).parsed
-
+  console.log('fileEnv =>', fileEnv);
   // object from env variable
   const envKeys = Object.keys(fileEnv).reduce((prev, next) => {
     prev[`process.env.${next}`] = JSON.stringify(fileEnv[next]);
