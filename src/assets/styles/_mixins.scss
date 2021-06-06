@@ -1,39 +1,54 @@
-// table
-@mixin break {
-  thead {
-    display: none;
+@mixin size($max-width, $min-width, $max-height, $min-height, $bg) {
+  max-width: $max-width;
+  min-width: $min-width;
+  max-height: $max-height;
+  min-height: $min-height;
+  background: $bg;
+}
+
+@mixin flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@mixin images {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+@mixin float($dir, $line-height, $size) {
+  float: $dir;
+  line-height: $line-height;
+  margin-#{dir}: $size;
+}
+
+// 640px, 1024px, 1400px
+$breakpoints-up: (
+  "medium": "40em",
+  "large": "64em",
+  "xlarge": "87.5em",
+);
+
+// 639px, 1023px, 1399px
+$breakpoints-down: (
+  "small": "39.937em",
+  "medium": "63.9375em",
+  "large": "87.4375em",
+);
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
   }
+}
 
-  tr {
-    display: block;
-    margin-bottom: 5px;
-  }
-
-  td {
-    display: block;
-    position: relative;
-    padding-left: 130px;
-    text-align: left;
-    border-bottom: 0;
-
-    &:last-child {
-      border-bottom: 1px solid $border-color;
-    }
-
-    &::before {
-      content: attr(data-heading);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 120px;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      background-color: $primary-color;
-      color: $light-color;
-      font-size: 0.75rem;
-      padding: 0 5px;
-      justify-content: center;
-    }
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
   }
 }

@@ -8,7 +8,7 @@ export default class Api {
   constructor() {
     this.apiToken = null;
     this.clientReq = null;
-    this.apiBaseUrl = process.env.BASE_API_URL;
+    this.apiBaseUrl = 'https://stein.efishery.com/v1/';
   }
 
   initApi() {
@@ -22,7 +22,6 @@ export default class Api {
     if (this.apiToken) {
       headers.Authorization = `Bearer ${this.apiToken}`;
     }
-
     this.clientReq = axios.create({
       baseURL: this.apiBaseUrl,
       timeout: 31000,
@@ -32,7 +31,7 @@ export default class Api {
     return this.clientReq
   }
 
-  getData(url: string, params: any) {
+  getData(url: string, params?: any) {
     return this.initApi().get(url, { params: params });
   }
 
@@ -40,7 +39,7 @@ export default class Api {
     return this.initApi().post(url, data);
   }
 
-  getCookie(name: string): string {
+  private getCookie(name: string): string {
     const ca: Array<string> = document.cookie.split(';');
     const caLen: number = ca.length;
     const caName = `${name}=`;
@@ -54,7 +53,7 @@ export default class Api {
     return '';
   }
 
-  setCookie(name: string, value: string, expireDays: number, path = '/'): void {
+  private setCookie(name: string, value: string, expireDays: number, path = '/'): void {
     let cookieStr = `${encodeURIComponent(name)}=${encodeURIComponent(value)};`;
     if (expireDays) {
       const dtExpires = new Date(new Date().getTime() + expireDays * 1000 * 60 * 60 * 24);

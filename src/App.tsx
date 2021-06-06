@@ -1,16 +1,25 @@
 import React, { Suspense } from 'react';
 import './assets/styles/App.scss';
 
-const HeaderComponent = React.lazy(() => import('./shared/header.component'));
+const PriceListComponent = React.lazy(() => import('./pages/price-list/price-list.component'));
 
-function App() {
-  return (
-    <div>
-      <Suspense fallback={<div>Loading...</div>}>
-        <HeaderComponent title="Fish Price List" />
-      </Suspense>
-    </div>
-  );
+const HeaderComponent = React.lazy(() => import('./shared/header/header.component'));
+
+// function App() {
+class App extends React.Component {
+
+  render() {
+    return (
+      <div>
+        <Suspense fallback={<div>Loading...</div>}>
+          <HeaderComponent />
+        </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+          <PriceListComponent />
+        </Suspense>
+      </div>
+    );
+  };
 }
 
 export default App;

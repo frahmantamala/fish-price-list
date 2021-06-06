@@ -6,14 +6,14 @@ const path = require('path'); // get current path
 module.exports = (env) => {
   // get root path
   const currentPath = path.join(__dirname);
-  console.log('currentPath =>', currentPath);
+
 
   // fallback path
   const basePath = currentPath + '/.env';
-  console.log('basePath =>', currentPath);
+
   // concat environment name to filename to specify the correct env file!
   const envPath = basePath + '.' + env.ENVIRONMENT;
-  console.log('envPath =>', envPath);
+
   // check if file exist, otherwise fallback to the .env
   const finalPath = fs.existsSync(envPath) ? envPath : basePath;
 

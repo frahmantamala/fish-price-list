@@ -1,0 +1,17 @@
+.action-containers {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 1.25rem 6.875rem;
+}
+
+.button-add {
+  background-color: rgba(40, 183, 150, 0.95);
+  border: none;
+  color: white;
+  padding: 0px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 10px;
+}
