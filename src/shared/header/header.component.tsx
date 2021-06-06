@@ -15,11 +15,11 @@ class HeaderComponent extends React.Component {
       <header className="header">
         {/* <div className="overlay"></div> */}
         <nav className="flex flex-jc-sb flex-ai-c">
-          <a href="#" className="header-logo">
+          <a href="/" className="header-logo">
             <h1>FISHLIST.</h1>
           </a>
 
-          <a id="btnHamburger" href="#" className="header-menu hide-for-desktop">
+          <a id="btnHamburger" href="/" className="header-menu hide-for-desktop">
             <span></span>
             <span></span>
             <span></span>

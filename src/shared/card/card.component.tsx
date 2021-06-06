@@ -12,8 +12,11 @@ interface CardProps {
 
 
 class CardComponent extends React.Component<CardProps, {}> {
+
   constructor(props: CardProps) {
     super(props)
+
+    this.state = {}
   }
 
   render() {

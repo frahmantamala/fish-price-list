@@ -1,11 +1,8 @@
 import React, { Suspense } from 'react';
 import Api from '../../core/api';
-import { Input } from 'antd';
 import './price-list.component.scss'
 import ModalComponent from '../../shared/modal/modal.component';
 import AddPriceListComponent from '../add-price-list/add-price-list.component';
-
-const { Search } = Input;
 
 const CardComponent = React.lazy(() => import('../../shared/card/card.component'));
 const FilterItemsComponent = React.lazy(() => import('./filter-items/filter-items.component'));
@@ -117,7 +114,7 @@ class PriceListComponent extends React.Component<{}, FetchState> {
   }
 
   render() {
-    const { dataList, tempDataList, isLoading, showModal } = this.state;
+    const { dataList, tempDataList, showModal } = this.state;
     // (dataList)
     // if (isLoading) {
     //   return <p>Loading...</p>

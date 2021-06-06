@@ -40,6 +40,7 @@ class SearchComponent extends React.Component<SearchPropsData, SearchState> {
       else if (searchAreaKota || searchKomoditas || searchPrice || searchSize) {
         return data
       }
+      return data
     })
 
     this.props.onChangeValue(dataPriceList)
