@@ -43,8 +43,6 @@ class SearchComponent extends React.Component<SearchPropsData, SearchState> {
     })
 
     this.props.onChangeValue(dataPriceList)
-
-    return dataPriceList;
   }
 
   render() {
